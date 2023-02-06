@@ -1,0 +1,13 @@
+diff --git a/cleanpager.module b/cleanpager.module
+index 83cff30..4a3d420 100644
+--- a/cleanpager.module
++++ b/cleanpager.module
+@@ -338,7 +338,7 @@ function _cleanpager_is_array_theme($themes, $theme_key) {
+  */
+ function cleanpager_theme_registry_alter(&$theme_registry) {
+   // Kill the next/previous forum topic navigation links.
+-  if ($theme_registry['pager_link']['function']['theme_pager_link']) {
++  if ($theme_registry['pager_link']['function'] == 'theme_pager_link') {
+     $theme_registry['pager_link']['function'] = 'cleanpager_theme_pager_link';
+   }
+ }
